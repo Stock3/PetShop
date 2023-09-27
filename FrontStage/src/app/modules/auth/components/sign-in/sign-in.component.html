@@ -1,0 +1,57 @@
+<div class="form-container">
+  <h1>Sign in</h1>
+  <form [formGroup]="loginForm" autocomplete="off" (submit)="logIn()">
+    <div>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label> Email </mat-label>
+        <input matInput formControlName="email" type="email" />
+        <mat-error *ngIf="loginForm.controls['email'].invalid">
+          {{ getEmailErrorMessage() }}
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label> Password </mat-label>
+        <input
+          matInput
+          formControlName="password"
+          type="password"
+          [passwordInput]="passwordTypeTrigger._elementRef.nativeElement"
+        />
+        <mat-icon
+          #passwordTypeTrigger
+          color="primary"
+          class="small-icon"
+          matSuffix
+          >visibility_off</mat-icon
+        >
+
+        <!-- <mat-error *ngIf="password.touched && password.invalid">
+				<span *ngIf="password.errors.required">This field is required.</span>
+				<span *ngIf="password.errors.maxlength"
+					>Maximum {{ password.errors.maxlength.requiredLength }} characters required</span
+				>
+			</mat-error> -->
+      </mat-form-field>
+    </div>
+
+    <a mat-button routerLink="{{ routes.resetPass }}">Forgot password</a>
+    <div class="form-footer">
+      <app-button
+        [buttonColor]="'warn'"
+        [buttonClass]="'form-submit'"
+        [buttonDisabled]="loginForm.invalid || buttonAuthDisabled"
+      >
+        <app-icon [icon]="'accessibility_new'"></app-icon>
+        Log In
+      </app-button>
+
+      <p>
+        Don't have an account?<a mat-button routerLink="{{ routes.singUp }}"
+          >Sign up</a
+        >
+      </p>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,12 @@
+<button
+  type="submit"
+  mat-raised-button
+  [disabled]="buttonDisabled"
+  [ngClass]="buttonClass"
+>
+  <span class="button-icon">
+    <ng-content select="app-icon"></ng-content>
+  </span>
+  <!-- ngProjectAs="app-icon" -->
+  <ng-content></ng-content>
+</button>

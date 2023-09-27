@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>{{ title }}</span>
+  <div>
+    <ul class="inline-block">
+      <li><a routerLink="{{routes.catalog}}">Catalog</a></li>
+    </ul>
+  </div>
+  <span class="my-spacer"></span>
+  <div class="inline-block">
+  <button mat-icon-button class="">
+    <span class="material-icons"> search </span>
+  </button>
+  <button mat-icon-button class="" routerLink="{{routes.profile}}">
+    <span class="material-icons"> account_box </span>
+  </button>
+  <button mat-icon-button routerLink="{{routes.cart}}" color="primary"
+  matBadge="8" matBadgePosition="before" matBadgeColor="accent">
+    <span class="material-icons">shopping_cart</span>
+  </button>
+</div>
+</mat-toolbar>

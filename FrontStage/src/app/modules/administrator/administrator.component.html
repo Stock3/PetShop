@@ -1,0 +1,47 @@
+<p>administrator works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <p>Products</p>
+      <ul>
+        <li>
+          <a routerLink="/administrator/products/list" class="text-primary ml-1">
+            <span> products </span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/administrator/products/edit/1" class="text-primary ml-1">
+            <span> Edit </span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/administrator/products/add" class="text-primary ml-1">
+            <span> Add </span>
+          </a>
+        </li>
+      </ul>
+      <hr />
+      <p>Orders</p>
+      <ul>
+        <li>
+          <a routerLink="/administrator/orders/list" class="text-primary ml-1">
+            <span> orders </span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/administrator/orders/edit/1" class="text-primary ml-1">
+            <span> Edit </span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/administrator/orders/add" class="text-primary ml-1">
+            <span> Add </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="col">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
